@@ -12,6 +12,7 @@ from nox.sessions import Session
 src_dir: Path = Path(__file__).parent / "src"
 python_code_path_list: List[str] = [
     # f"{src_dir}",
+    "main.py",
     "noxfile.py",
 ]
 assert all(isinstance(path, str) for path in python_code_path_list)
