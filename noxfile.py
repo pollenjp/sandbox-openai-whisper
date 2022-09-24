@@ -9,16 +9,17 @@ from typing import TypedDict
 import nox
 from nox.sessions import Session
 
+src_dir: Path = Path(__file__).parent / "src"
 python_code_path_list: List[str] = [
-    "path/to/python/directory",  # TODO: python directory
+    # f"{src_dir}",
     "noxfile.py",
 ]
 assert all(isinstance(path, str) for path in python_code_path_list)
 env_common: Dict[str, str] = {
-    "PYTHONPATH": f"{Path(__file__).parent}",  # TODO: check python path
+    # "PYTHONPATH": f"{src_dir}",
 }
 nox_tmp_dir: Path = Path(__file__).parent / ".nox_tmp"
-python_version_list: List[str] = ["3.10"]  # TODO: check python version
+python_version_list: List[str] = ["3.10"]
 
 
 class SessionKwargs(TypedDict, total=False):
